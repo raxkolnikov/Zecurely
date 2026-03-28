@@ -1,31 +1,31 @@
-# 🔐 Secure TLS CLI Chat (mTLS)
+# Secure TLS CLI Chat (mTLS)
 
 A minimal, production-style secure chat system using **TLS 1.3 with mutual authentication (mTLS)**.
 
 ---
 
-# 📌 Overview
+# Overview
 
 This system ensures:
 
-* 🔒 End-to-end encrypted communication
-* 🛡️ Protection against MITM attacks
-* 👤 Verified clients and server (mTLS)
-* 🔑 Strong identity using certificates
+* End-to-end encrypted communication
+* Protection against MITM attacks
+* Verified clients and server (mTLS)
+* Strong identity using certificates
 
 ---
 
-# ⚠️ IMPORTANT BEFORE YOU START
+# IMPORTANT BEFORE YOU START
 
 The `certs/` folder in this repo is intentionally empty.
 
-👉 You MUST generate your own certificates before running the app.
+You MUST generate your own certificates before running the app.
 
-👉 **Never upload private keys (`*.key`) to GitHub.**
+**Never upload private keys (`*.key`) to GitHub.**
 
 ---
 
-# 📁 Project Structure
+# Project Structure
 
 ```
 secure_chat_tls/
@@ -39,7 +39,7 @@ secure_chat_tls/
 
 ---
 
-# 👨‍💻 SETUP GUIDE
+# SETUP GUIDE
 
 ## PART 1 — Server Setup
 
@@ -66,18 +66,18 @@ Run these commands inside your project folder:
 
 ---
 
-### 🔹 Create CA (Certificate Authority)
+### Create CA (Certificate Authority)
 
 ```
 openssl genrsa -out certs/ca.key 4096
 openssl req -x509 -new -nodes -key certs/ca.key -sha256 -days 3650 -out certs/ca.pem
 ```
 
-👉 This is your **root authority** — keep `ca.key` VERY safe.
+This is your **root authority** — keep `ca.key` VERY safe.
 
 ---
 
-### 🔹 Create Server Certificate
+### Create Server Certificate
 
 ```
 openssl genrsa -out certs/server.key 2048
@@ -87,7 +87,7 @@ openssl x509 -req -in certs/server.csr -CA certs/ca.pem -CAkey certs/ca.key -CAc
 
 ---
 
-### 🔹 Create Client Certificate
+### Create Client Certificate
 
 ```
 openssl genrsa -out certs/client.key 2048
@@ -136,9 +136,9 @@ python src/client.py
 
 ---
 
-# 🔐 SECURITY RULES (VERY IMPORTANT)
+# SECURITY RULES (VERY IMPORTANT)
 
-## ❌ NEVER DO THIS
+## NEVER DO THIS
 
 * Upload `.key` files to GitHub
 * Share private keys publicly
@@ -146,7 +146,7 @@ python src/client.py
 
 ---
 
-## ✅ ALWAYS DO THIS
+## ALWAYS DO THIS
 
 * Keep `.key` files private
 * Use `.gitignore`:
@@ -157,41 +157,41 @@ certs/*.key
 
 ---
 
-## 🚨 If a key is leaked:
+## If a key is leaked:
 
-👉 Delete all certs
-👉 Regenerate everything
+Delete all certs
+Regenerate everything
 
 ---
 
-# 🧠 How it works (simple explanation)
+# How it works (simple explanation)
 
 * `ca.pem` → trusted authority
 * `server.pem` → proves server identity
 * `client.pem` → proves client identity
 * TLS verifies everything automatically
 
-👉 Result: **secure, authenticated communication**
+Result: **secure, authenticated communication**
 
 ---
 
-# ⚡ Common Issues
+# Common Issues
 
-## ❌ Connection fails
+## Connection fails
 
 * Make sure cert files are in `certs/`
 * Check filenames are correct
 
 ---
 
-## ❌ TLS error
+## TLS error
 
 * Certificates may not be signed properly
 * Regenerate them carefully
 
 ---
 
-## ❌ Client not connecting
+## Client not connecting
 
 * Server must be running first
 * Check IP address in client
