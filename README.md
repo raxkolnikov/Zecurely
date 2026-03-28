@@ -43,7 +43,7 @@ secure_chat_tls/
 
 # 👨‍💻 SETUP GUIDE
 
-## 👑 PART 1 — Creator / Server Setup
+## PART 1 — Server Setup
 
 ---
 
@@ -107,7 +107,7 @@ python src/server.py
 
 ---
 
-# 👤 PART 2 — Client Setup
+# PART 2 — Client Setup
 
 Each user (client) must receive **3 files from you**:
 
