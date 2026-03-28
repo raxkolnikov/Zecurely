@@ -204,10 +204,4 @@ certs/*.key
 * More secure than standard HTTPS setups
 * Suitable for private, controlled environments
 
----
-
-# 🛑 Disclaimer
-
-This is a **learning + practical security project**.
-It is not audited, but it follows real-world security practices.
 
