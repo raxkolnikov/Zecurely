@@ -41,7 +41,7 @@ secure_chat_tls/
 
 ---
 
-# 🧑‍💻 SETUP GUIDE
+# 👨‍💻 SETUP GUIDE
 
 ## 👑 PART 1 — Creator / Server Setup
 
