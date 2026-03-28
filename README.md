@@ -45,8 +45,6 @@ secure_chat_tls/
 
 ## 👑 PART 1 — Creator / Server Setup
 
-This is done by the **project owner (you)**.
-
 ---
 
 ## Step 1: Install OpenSSL
