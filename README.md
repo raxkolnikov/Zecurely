@@ -2,8 +2,6 @@
 
 A minimal, production-style secure chat system using **TLS 1.3 with mutual authentication (mTLS)**.
 
-This project does **NOT use custom cryptography** — it relies on trusted, industry-standard security via OpenSSL and Python’s `ssl` module.
-
 ---
 
 # 📌 Overview
