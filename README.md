@@ -196,12 +196,5 @@ certs/*.key
 * Server must be running first
 * Check IP address in client
 
----
-
-# 💡 Notes
-
-* This project uses **mutual TLS (mTLS)** → both sides are verified
-* More secure than standard HTTPS setups
-* Suitable for private, controlled environments
 
 
