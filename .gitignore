@@ -1,0 +1,7 @@
+certs/*.key
+certs/*.csr
+certs/*.srl
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
